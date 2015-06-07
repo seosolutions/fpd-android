@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">FPD</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">login</string>
+    <string name="title_activity_user">user</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="login">LOGIN</string>
+    <string name="attempts">Attempts:</string>
+    <string name="login_page">Login Page</string>
+    <string name="title_activity_create_account">create_account</string>
+    <string name="title_activity_set_up_a_delivery">Set_up_a_delivery</string>
+    <string name="title_activity_edit_existing_delivery">Edit_existing_delivery</string>
+    <string name="title_activity_user_profile">user_profile</string>
+</resources>

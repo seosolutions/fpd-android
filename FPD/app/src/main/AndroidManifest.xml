@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="qiwei.fpd" >
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".login"
+            android:label="@string/title_activity_login" >
+            <intent-filter>
+                <action android:name="qiwei.fpd.login" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".user"
+            android:label="@string/title_activity_user" >
+            <intent-filter>
+                <action android:name="qiwei.fpd.user" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".create_account"
+            android:label="@string/title_activity_create_account" >
+            <intent-filter>
+                <action android:name="qiwei.fpd.create_account" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+
+        <activity
+            android:name=".Set_up_a_delivery"
+            android:label="@string/title_activity_set_up_a_delivery" >
+            <intent-filter>
+                <action android:name="qiwei.fpd.Set_up_a_delivery" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Edit_existing_delivery"
+            android:label="@string/title_activity_edit_existing_delivery" >
+            <intent-filter>
+                <action android:name="qiwei.fpd.Edit_existing_delivery" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".user_profile"
+            android:label="@string/title_activity_user_profile" >
+            <intent-filter>
+                <action android:name="qiwei.fpd.user_profile" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

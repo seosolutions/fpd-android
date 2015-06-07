@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="qiwei.fpd.login">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/username"
+        android:id="@+id/textView_username"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="111dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/password"
+        android:id="@+id/textView_password"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/textView_username"
+        android:layout_alignLeft="@+id/textView_username"
+        android:layout_alignStart="@+id/textView_username" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_account"
+        android:id="@+id/button_create_account"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/textView_password"
+        android:layout_alignStart="@+id/textView_password"
+        android:layout_marginBottom="104dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:id="@+id/button_login"
+        android:layout_alignTop="@+id/button_create_account"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="43dp"
+        android:layout_marginEnd="43dp" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_username"
+        android:layout_above="@+id/textView_password"
+        android:layout_toRightOf="@+id/button_create_account"
+        android:layout_toEndOf="@+id/button_create_account" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editText_password"
+        android:layout_alignBottom="@+id/textView_password"
+        android:layout_alignLeft="@+id/editText_username"
+        android:layout_alignStart="@+id/editText_username" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/attempts"
+        android:id="@+id/textView_attempts"
+        android:layout_above="@+id/button_create_account"
+        android:layout_alignRight="@+id/textView_password"
+        android:layout_alignEnd="@+id/textView_password"
+        android:layout_marginBottom="66dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView_attempts_counter"
+        android:layout_alignTop="@+id/textView_attempts"
+        android:layout_toEndOf="@+id/textView_attempts"
+        android:layout_alignLeft="@+id/button_login"
+        android:layout_alignStart="@+id/button_login" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/login_page"
+        android:id="@+id/textView_login_page"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/button_login"
+        android:layout_toStartOf="@+id/button_login"
+        android:layout_marginTop="33dp" />
+
+</RelativeLayout>
