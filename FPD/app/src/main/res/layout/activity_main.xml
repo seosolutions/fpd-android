@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Welcome\nTo\nFriends\Parcel\nDelivery\nSystem"
+        android:text="Welcome\nTo\nFriends\nParcel\nDelivery\nSystem"
         android:id="@+id/textView_title"
         android:layout_marginTop="145dp"
         android:layout_alignParentTop="true"

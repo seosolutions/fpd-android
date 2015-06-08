@@ -34,16 +34,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".create_account"
-            android:label="@string/title_activity_create_account" >
-            <intent-filter>
-                <action android:name="qiwei.fpd.create_account" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        
 
         <activity
             android:name=".Set_up_a_delivery"

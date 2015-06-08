@@ -2,11 +2,15 @@ package qiwei.fpd;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.content.Intent;
+import android.preference.PreferenceActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -87,6 +91,44 @@ public class login extends ActionBarActivity {
         }
     }
 
+
+    private class FetchSQLcreateaccount extends AsyncTask<String, Void, Integer> {
+        @Override
+        protected Integer doInBackground(String... params) {
+            int rows;
+            try {
+                Class.forName("org.postgresql.Driver");
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            String url = "jdbc:postgresql://10.0.2.2/postgres?user=postgres&password=1234";
+            Connection conn;
+            try{
+                DriverManager.setLoginTimeout(5);
+                conn = DriverManager.getConnection(url);
+                PreparedStatement st = conn.prepareStatement("INSERT INTO \"userTable\" (username, password) VALUES ('" + mastername + "', '" + masterpassword +"');");
+                rows = st.executeUpdate();
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                rows = -1;
+            }
+            return rows;
+        }
+        @Override
+        protected void onPostExecute(Integer value) {
+            if(value == -1){
+                Toast.makeText(login.this, "The username is already used. Retry please.", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(login.this, "Success! Logging in!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent("qiwei.fpd.user");
+                startActivity(intent);
+            }
+
+
+        }
+    }
     public void LoginButton(){
         username = (EditText)findViewById(R.id.editText_username);
         password = (EditText)findViewById(R.id.editText_password);
@@ -100,7 +142,6 @@ public class login extends ActionBarActivity {
                     public void onClick(View v) {
                         mastername = username.getText().toString();
                         masterpassword = password.getText().toString();
-
                         new FetchSQLgetpassword().execute(mastername, masterpassword);
                     }
                 }
@@ -108,13 +149,17 @@ public class login extends ActionBarActivity {
     }
 
     public void CreateAccButton(){
+        username = (EditText)findViewById(R.id.editText_username);
+        password = (EditText)findViewById(R.id.editText_password);
         create_account_btn = (Button)findViewById(R.id.button_create_account);
+
         create_account_btn.setOnClickListener(
                 new View.OnClickListener(){
                     @Override
                     public void onClick(View v){
-                        Intent intent = new Intent("qiwei.fpd.create_account");
-                        startActivity(intent);
+                        mastername = username.getText().toString();
+                        masterpassword = password.getText().toString();
+                        new FetchSQLcreateaccount().execute(mastername, masterpassword);
                     }
                 }
         );
