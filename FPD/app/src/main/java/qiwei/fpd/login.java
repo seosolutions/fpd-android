@@ -74,10 +74,12 @@ public class login extends ActionBarActivity {
         }
         @Override
         protected void onPostExecute(String value) {
-            if (masterpassword.equals(value)) {
+            if (masterpassword.equals(value) && value!="") {
                 Toast.makeText(login.this, "Username and password are correct",
                         Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent("qiwei.fpd.user");
+                final Global globalVariable = (Global)getApplicationContext();
+                globalVariable.setMastername(mastername);
+                Intent intent = new Intent(getBaseContext(),user.class);
                 startActivity(intent);
             } else {
                 Toast.makeText(login.this, "Username or password is not correct",
@@ -122,7 +124,9 @@ public class login extends ActionBarActivity {
                 Toast.makeText(login.this, "The username is already used. Retry please.", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(login.this, "Success! Logging in!", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent("qiwei.fpd.user");
+                final Global globalVariable = (Global)getApplicationContext();
+                globalVariable.setMastername(mastername);
+                Intent intent = new Intent(getBaseContext(), user.class);
                 startActivity(intent);
             }
 
@@ -164,26 +168,5 @@ public class login extends ActionBarActivity {
                 }
         );
 
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_login, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
