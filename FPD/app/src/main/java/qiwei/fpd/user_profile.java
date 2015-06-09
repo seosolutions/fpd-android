@@ -70,9 +70,8 @@ public class user_profile extends ActionBarActivity {
                     @Override
                     public void onClick(View v) {
                         friendname = friendinput.getText().toString();
-                        //if you want to access global variables here, you have to do the next line
-                        //final Global globalVariable = (Global)getApplicationContext();
-                        new FetchSQLaddfriend().execute(mastername, friendname);
+
+                         new FetchSQLaddfriend().execute(mastername, friendname);
                     }
                 }
         );
@@ -126,14 +125,26 @@ public class user_profile extends ActionBarActivity {
 
                     String masterfriendlist = retval;
 
-                    String[] splitArr = convertStringToArray(masterfriendlist);
+
+                    if(masterfriendlist!=null){
+                        String[] splitArr = convertStringToArray(masterfriendlist);
+                        //retval = String.valueOf(splitArr.length);
+                        for(int i=0; i<splitArr.length; i++){
+                            if(splitArr[i].equals(friendname)){
+                                retval = "already";
+                                return retval;
+                            }
+                        }
+
+                    }
+                    /*String[] splitArr = convertStringToArray(masterfriendlist);
                     //retval = String.valueOf(splitArr.length);
                     for(int i=0; i<splitArr.length; i++){
                         if(splitArr[i].equals(friendname)){
                             retval = "already";
                             return retval;
                         }
-                    }
+                    }*/
                     //now the two people are addable we update the database
                     //get friend's friendlist
                     DriverManager.setLoginTimeout(5);
@@ -149,22 +160,33 @@ public class user_profile extends ActionBarActivity {
                     conn.close();
                     String friendfriendlist = retval;
 
-                    String masteradded = masterfriendlist + "," + friendname;
-                    String friendaded = friendfriendlist + "," + mastername;
+                    String masteradded;
+                    String friendadded;
+                    if(masterfriendlist==null){
+                        masteradded = friendname;
+                    } else {
+                        masteradded = masterfriendlist + "," + friendname;
+                    }
+
+                    if(friendfriendlist==null){
+                        friendadded = mastername;
+                    } else {
+                        friendadded = friendfriendlist + "," + mastername;
+                    }
 
                     int rows;
                     try{
                         DriverManager.setLoginTimeout(5);
                         conn = DriverManager.getConnection(url);
                         PreparedStatement st2 = conn.prepareStatement("UPDATE \"userTable\" SET friendlist = '"+masteradded+"'WHERE username = '"+mastername+"';");
-                        PreparedStatement st3 = conn.prepareStatement("UPDATE \"userTable\" SET friendlist = '"+friendaded+"' WHERE username = '"+friendname+"';");
-                    rows = st2.executeUpdate();
-                    rows = st3.executeUpdate();
-                    st.close();
-                    conn.close();
+                        PreparedStatement st3 = conn.prepareStatement("UPDATE \"userTable\" SET friendlist = '"+friendadded+"' WHERE username = '"+friendname+"';");
+                        rows = st2.executeUpdate();
+                        rows = st3.executeUpdate();
+                        st.close();
+                        conn.close();
                     } catch (SQLException e) {
-                    e.printStackTrace();
-                    rows = -1;
+                        e.printStackTrace();
+                        rows = -1;
                     }
                     return "added";
                 }
@@ -178,10 +200,6 @@ public class user_profile extends ActionBarActivity {
         @Override
         protected void onPostExecute(String result) {
             Toast.makeText(user_profile.this, result, Toast.LENGTH_LONG).show();
-
-            //Toast.makeText(user_profile.this, result, Toast.LENGTH_LONG).show();
-
-            //Toast.makeText(user_profile.this, (convertStringToArray(value))[1], Toast.LENGTH_LONG).show();
         }
     }
 

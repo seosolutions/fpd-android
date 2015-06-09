@@ -15,4 +15,9 @@
     <string name="title_activity_set_up_a_delivery">Set_up_a_delivery</string>
     <string name="title_activity_edit_existing_delivery">Edit_existing_delivery</string>
     <string name="title_activity_user_profile">user_profile</string>
+    <string name="intro1">There are two types of delivery: direct and indirect.</string>
+    <string name="intro2">When user A wants to send a parcel to B and A,B are friends, A can setup a direct delivery to B.</string>
+    <string name="intro3">When user A wants to send a parcel to B through C and C is a common friend of A,B, A can setup an indirect delivery to B through C.</string>
+    <string name="title_activity_set_de">SetDE</string>
+    <string name="title_activity_set_ind">SetIND</string>
 </resources>
