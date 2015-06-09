@@ -5,7 +5,126 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context="qiwei.fpd.SetDE">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Parcel:"
+        android:id="@+id/textView_parcel"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Receiver:"
+        android:id="@+id/textView_receiver"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/editText_parcel_input"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Payment:"
+        android:id="@+id/textView_payment"
+        android:layout_below="@+id/editText_receiver_input"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="54dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Zip Code:"
+        android:id="@+id/textView_zip"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Date:"
+        android:id="@+id/textView_date"
+        android:layout_below="@+id/editText_zip_input"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="37dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Time:"
+        android:id="@+id/textView_time"
+        android:layout_marginBottom="48dp"
+        android:layout_above="@+id/button_gosetde"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Set up this direct delivery"
+        android:id="@+id/button_gosetde"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_parcel_input"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textView_payment"
+        android:layout_toEndOf="@+id/textView_payment"
+        android:layout_marginLeft="47dp"
+        android:layout_marginStart="47dp" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_receiver_input"
+        android:layout_alignTop="@+id/textView_receiver"
+        android:layout_alignLeft="@+id/editText_parcel_input"
+        android:layout_alignStart="@+id/editText_parcel_input" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_payment_input"
+        android:layout_alignTop="@+id/textView_payment"
+        android:layout_alignLeft="@+id/editText_receiver_input"
+        android:layout_alignStart="@+id/editText_receiver_input" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_zip_input"
+        android:layout_alignTop="@+id/textView_zip"
+        android:layout_alignLeft="@+id/editText_payment_input"
+        android:layout_alignStart="@+id/editText_payment_input" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_date_input"
+        android:layout_alignTop="@+id/textView_date"
+        android:layout_alignLeft="@+id/editText_zip_input"
+        android:layout_alignStart="@+id/editText_zip_input" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_time_input"
+        android:layout_alignTop="@+id/textView_time"
+        android:layout_alignLeft="@+id/editText_date_input"
+        android:layout_alignStart="@+id/editText_date_input" />
 </RelativeLayout>
