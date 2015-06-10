@@ -6,4 +6,72 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="qiwei.fpd.Edit_existing_delivery">
 
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel This Delivery"
+        android:id="@+id/button_cancel"
+        android:layout_above="@+id/button_report_arrive"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Report delivery arrival"
+        android:id="@+id/button_report_arrive"
+        android:layout_above="@+id/button_delivery_receival"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Report Delivery Receival"
+        android:id="@+id/button_delivery_receival"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Or\nInput Delivery ID below\nAnd choose any of the tasks"
+        android:id="@+id/textView_review_title"
+        android:textAlignment="center"
+        android:layout_above="@+id/editText_deIDinput"
+        android:layout_alignRight="@+id/editText_deIDinput"
+        android:layout_alignEnd="@+id/editText_deIDinput"
+        android:layout_marginBottom="41dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Delivery ID:"
+        android:id="@+id/textView_deID"
+        android:layout_marginBottom="44dp"
+        android:layout_above="@+id/button_cancel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_deIDinput"
+        android:layout_alignBottom="@+id/textView_deID"
+        android:layout_toRightOf="@+id/textView_deID"
+        android:layout_toEndOf="@+id/textView_deID"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View My Delivery"
+        android:id="@+id/button_view_my"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

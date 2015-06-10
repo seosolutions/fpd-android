@@ -180,7 +180,7 @@ public class SetDE extends ActionBarActivity {
                     rows = st2.executeUpdate();
                     st2.close();
                     conn.close();
-                    return "Set up completed!";
+                    return ("The ID for this delivery is "+rows2);
                 } catch (SQLException e) {
                     e.printStackTrace();
                     return "Database error! Make sure to have valid connections";

@@ -72,6 +72,14 @@
             android:name=".SetIND"
             android:label="@string/title_activity_set_ind" >
         </activity>
+        <activity
+            android:name=".create_account"
+            android:label="@string/title_activity_create_account" >
+        </activity>
+        <activity
+            android:name=".rate"
+            android:label="@string/title_activity_rate" >
+        </activity>
     </application>
 
 </manifest>

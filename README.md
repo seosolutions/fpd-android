@@ -1,5 +1,15 @@
 # fpd-android
-现在login page里面
+#做完了！！！！！！！！
+以下功能都可以了！！！
+create account
+login
+set up direct delivery
 
-按login按钮 会在database里面的username和password核实 然后login
-按create按钮 会在database里面insert 并且login
+view delivery
+cancel delivery
+arrival
+receival
+
+add friend 
+remove friend
+

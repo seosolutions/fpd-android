@@ -20,4 +20,5 @@
     <string name="intro3">When user A wants to send a parcel to B through C and C is a common friend of A,B, A can setup an indirect delivery to B through C.</string>
     <string name="title_activity_set_de">SetDE</string>
     <string name="title_activity_set_ind">SetIND</string>
+    <string name="title_activity_rate">rate</string>
 </resources>
