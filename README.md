@@ -1,6 +1,5 @@
 # fpd-android
-Friends Parcel Delivery Android Application (android studio + postgresql)
-
+Friends Parcel Delivery Android Application Using Android Studio and Postgresql (class project)
 
 ## Features
 * create account
